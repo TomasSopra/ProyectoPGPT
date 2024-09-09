@@ -6,11 +6,11 @@ with open(os.path.join(os.path.dirname(__file__), "requirements.txt")) as f:
     dependencies = f.read().strip().split("\n")
 
 setup(
-    name="pentestgpt",
+    name="sspentestlab",
     version="0.13.3",
-    description="PentestGPT, a GPT-empowered penetration testing tool",
+    description="SSPentestLab, a GPT-empowered penetration testing tool",
     long_description="""
-    PentestGPT is a penetration testing tool empowered by ChatGPT.
+    SSPentestLab is a penetration testing tool empowered by ChatGPT.
     It is designed to automate the penetration testing process. It
     is prototyped initially on top of ChatGPT and operate in an
     interactive mode to guide penetration testers in both overall
@@ -28,15 +28,15 @@ setup(
         )
     ),
     license="MIT License",
-    packages=["pentestgpt"] + find_packages(),
+    packages=["sspentestlab"] + find_packages(),
     # packages=find_packages(),
-    # scripts=['pentestgpt/main.py'],
+    # scripts=['sspentestlab/main.py'],
     install_requires=dependencies,
     entry_points={
         "console_scripts": [
-            "pentestgpt=pentestgpt.main:main",
-            "pentestgpt-cookie=pentestgpt.extract_cookie:main",
-            "pentestgpt-connection=pentestgpt.test_connection:main",
+            "sspentestlab=sspentestlab.main:main",
+            "sspentestlab-cookie=sspentestlab.extract_cookie:main",
+            "sspentestlab-connection=sspentestlab.test_connection:main",
         ]
     },
 )

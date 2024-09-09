@@ -7,8 +7,8 @@ install:
 	poetry install
 
 format: updatesetup
-	isort pentestgpt
-	black pentestgpt
+	isort sspentestlab
+	black sspentestlab
 
 updatesetup:
-	bash pentestgpt/scripts/update.sh
+	bash sspentestlab/scripts/update.sh
