@@ -1,35 +1,48 @@
-![Sopra Steria logo](./imgs/st2.png)
-# SSPentestLab
+<p align="center">
+  <img src="./imgs/sopra_steria_logo.png" alt="Company Logo" width="250"/>
+</p>
 
-SSPentestLab is a penetration testing tool powered by Large Language Models (LLMs), designed to automate and assist in the penetration testing process. This tool is ideal for low to mid-level pentesters, offering interactive guidance, explanations, and to-do lists to aid junior users.
+<p align="center">
+  <img src="./imgs/logo_ss.png" alt="SSPentest-Lab name image" width="500"/>
+</p>
 
-## Getting Started
+<p align="center">
+  <strong>Penetration Testing Automation Powered by LLMs</strong>
+</p>
 
-SSPentestLab leverages OpenAI's models, specifically GPT-4, due to its superior performance and reasoning capabilities compared to other models. It is designed to solve easy to medium pentesting tasks.
+---
 
-## General Information
+**SSPentestLab** is a penetration testing tool powered by **Large Language Models (LLMs)**, designed to automate and assist in the penetration testing process. This tool is ideal for low to mid-level pentesters, offering interactive guidance, explanations, and to-do lists to aid junior users.
+
+## 🌟 Features
+
+- **Automated Pentesting** with GPT-4 or custom models.
+- **Interactive Commands** to guide penetration testing.
+- **Custom Model Integration** for flexibility.
+
+---
+
+## 🚀 Getting Started
+
+SSPentestLab leverages **OpenAI's models**, specifically **GPT-4**, due to its superior performance and reasoning capabilities compared to other models. It is designed to solve easy to medium pentesting tasks.
+
+## 🔍 General Information
 
 ### What is SSPentestLab?
 
-SSPentestLab is a penetration testing tool empowered by Large Language Models (LLMs). It is designed to automate the penetration testing process and is built on top of the ChatGPT API. It operates in an interactive mode to guide penetration testers in both overall progress and specific operations.
+**SSPentestLab** is a penetration testing tool empowered by Large Language Models (LLMs). It is built on top of the ChatGPT API and operates in an interactive mode, guiding pentesters in overall progress and specific operations.
 
-### Why is it necessary to pay to use SSPentestLab?
+### Why OpenAI (GPT-4)?
 
-To achieve the best performance, it is recommended to use the GPT-4+ API, which requires a payment method linked to your OpenAI account.
+GPT-4 provides superior reasoning capabilities and more reliable results compared to GPT-3.5 and other models. This makes it the ideal choice for automated pentesting.
 
-### Why OpenAI (GPT-4+)?
+### Custom GPT Models
 
-After extensive evaluation, GPT-4 was found to outperform GPT-3.5 and other LLMs in terms of penetration testing reasoning. GPT-3.5 often fails at simple tasks, whereas GPT-4 provides more reliable results.
+You can use custom GPT models. Check out: `SSPentestLab/utils/APIs/gpt4all_api.py`.
 
-### Why not just use GPT-4 directly?
+---
 
-GPT-4 can suffer from loss of context as tests go deeper into the penetration process. SSPentestLab addresses this issue by maintaining context throughout the testing process.
-
-### Custom GPT models
-
-It is possible to use custom GPT models. Check: `SSPentestLab/utils/APIs/gpt4all_api.py`.
-
-## Installation
+## 📝 Installation
 
 ### Installation via GIT with pip
 
@@ -60,7 +73,7 @@ It is possible to use custom GPT models. Check: `SSPentestLab/utils/APIs/gpt4all
    sspentestlab
    ```
 
-### Installation via Docker
+### 🐋 Installation via Docker
 
 From the application repository, use the provided Dockerfile to create the image:
 ```sh
@@ -75,7 +88,9 @@ Export the API key:
 export OPENAI_API_KEY="<your key here>"
 ```
 
-## Usage
+---
+
+## 🎮 Usage
 
 Run SSPentestLab using the latest model:
 ```sh
@@ -85,6 +100,10 @@ To start, run:
 ```sh
 sspentestlab --args
 ```
+
+<p align="center">
+  <img src="./imgs/InicioSSPentestLab.gif" alt="SSPentest-Lab name image"/>
+</p>
 
 ### Available Commands
 
@@ -121,7 +140,9 @@ After completing the penetration testing, a report will be generated in the `log
 python3 utils/report_generator.py <log file>
 ```
 
-## Custom Model Endpoints and Local LLMs
+---
+
+## 🧠 Custom Model Endpoints and Local LLMs
 
 SSPentestLab supports local LLMs, optimized for GPT-4.
 
@@ -132,3 +153,5 @@ SSPentestLab supports local LLMs, optimized for GPT-4.
 - To select a particular model with GPT4ALL, update the `module_mapping` class in `sspentestlab/utils/APIs/module_import.py`.
 
 Follow the examples of `module_import.py`, `gpt4all.py`, and `chatgpt_api.py` to create API support for your model.
+
+<p align="center"><img src="./imgs/like.gif">
