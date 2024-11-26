@@ -53,7 +53,7 @@ You can use custom GPT models. Check out: `SSPentestLab/utils/APIs/gpt4all_api.p
    ```
 2. Install the project:
    ```sh
-   pip3 install git+https://github.com/TomasBastanteFlor/PGPT
+   pip3 install git+https://innersource.soprasteria.com/demos/reto_11_gcu
    ```
 3. Ensure that you have linked a payment method to your OpenAI account. Export your API key:
    - UNIX/GNU-Linux:
@@ -73,7 +73,7 @@ You can use custom GPT models. Check out: `SSPentestLab/utils/APIs/gpt4all_api.p
    sspentestlab
    ```
 
-### 🐋 Installation via Docker
+### 🐋 Installation via Docker using Dockerfile
 
 From the application repository, use the provided Dockerfile to create the image:
 ```sh
@@ -87,6 +87,32 @@ Export the API key:
 ```sh
 export OPENAI_API_KEY="<your key here>"
 ```
+
+### 🐋 Installation via Docker using Image (.tar)
+
+Download image from img_docker/SSPentestLab.tar
+
+Import the image from terminal to Docker:
+```sh
+docker load -i path/to/file/SSPentestLab.tar
+```
+Run a Docker image from the terminal by specifying the search folder, port, and image name:
+```sh
+docker run -it --rm -v ${env:USERPROFILE}\PentestFiles:/app -p 8000:8000 sspentestlab-app
+```
+When starting the container, specify the API key for GPT-4:
+```sh
+export OPENAI_API_KEY=<your key here>
+```
+To initialize SSPentestLab, call the tool with:
+```sh
+sspentestlab
+```
+To close the conteiner, use the following command:
+```sh
+exit
+```
+
 
 ---
 
@@ -127,18 +153,15 @@ sspentestlab --args
 
 ### Sub-task Handler Commands
 
-- `help`: Show the help message.
 - `brainstorm`: Brainstorm solutions for the local task.
 - `discuss`: Discuss the local task.
-- `google`: Search on Google (WIP).
 - `continue`: Exit the subtask and continue the main testing session.
 
 ### Report and Logging
 
-After completing the penetration testing, a report will be generated in the `logs` folder if you quit with the `quit` command. Session IDs for previous sessions are stored in the `logs/sessions` folder. To print the report in a human-readable format:
-```sh
-python3 utils/report_generator.py <log file>
-```
+After completing the penetration testing, the user is going to be able to generate a report using an integrated function inside the main menu called `report`.
+
+If you quit with the `quit` menu function, it will save the current session inside the `logs/sessions` folder. You will be able to load this session when freshly starting the tool again.
 
 ---
 
@@ -153,5 +176,3 @@ SSPentestLab supports local LLMs, optimized for GPT-4.
 - To select a particular model with GPT4ALL, update the `module_mapping` class in `sspentestlab/utils/APIs/module_import.py`.
 
 Follow the examples of `module_import.py`, `gpt4all.py`, and `chatgpt_api.py` to create API support for your model.
-
-<p align="center"><img src="./imgs/like.gif">
