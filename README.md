@@ -44,6 +44,40 @@ You can use custom GPT models. Check out: `SSPentestLab/utils/APIs/gpt4all_api.p
 
 ## 📝 Installation
 
+### System Requirments
+
+- _OS:_ 64-bit Windows 10 or above
+- _Memory:_
+- - Minimum: 16GB DDR4
+- - Recommended: 32GB DDR4 or above
+- _Storage:_ 32GB of free space
+- Visual Studio 2022 for C++
+
+### Ollama Installation/ Requirments (incase of local models use)
+
+Must have latest version of [Ollama](https://ollama.com/) installed with the next local models:
+
+- tazarov/all-minilm-l6-v2-f32:latest (Embedding model)
+  ```sh
+   ollama pull tazarov/all-minilm-l6-v2-f32:latest
+   ```
+- llama3.2:1b (Embedding interpreter)
+  ```sh
+   ollama pull llama3.2:1b
+   ```
+- qwen2.5:0.5b (Main LLM)
+  ```sh
+   ollama pull qwen2.5:0.5b
+   ```
+
+You can change this models depending on your desires and machine specs. You can change those models depending on your needs inside of utils/APIs/langollama_api.py and utils/APIs/rag_utils.py
+
+#### Building for Windows (x86, x64 and arm64) with MSVC:
+
+- Install Visual Studio 2022, e.g. via the [Community Edition](https://visualstudio.microsoft.com/en/vs/community/). In the installer, select at least the following options (this also automatically installs the required additional tools like CMake,...):
+- Tab Workload: Desktop-development with C++
+- Tab Components (select quickly via search): C++-CMake Tools for Windows, Git for Windows, C++-Clang Compiler for Windows, MS-Build Support for LLVM-Toolset (clang)
+
 ### Installation via GIT with pip
 
 1. Create a virtual environment if necessary:
